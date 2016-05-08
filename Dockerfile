@@ -6,13 +6,13 @@ RUN dnf -y update
 
 # python 2
 RUN dnf -y install python
-RUN pip install --upgrade pip
-RUN pip install virtualenv
+RUN /usr/bin/pip install --upgrade pip
+RUN /usr/bin/pip install virtualenv
 
 # python 3
 RUN dnf -y install python3
-RUN pip3 install --upgrade pip
-RUN pip3 install virtualenv
+RUN /usr/bin/pip3 install --upgrade pip
+RUN /usr/bin/pip3 install virtualenv
 
 # tools
 RUN dnf -y install git curl zip
