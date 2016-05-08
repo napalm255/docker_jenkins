@@ -6,16 +6,19 @@ RUN dnf -y update
 
 # python 2
 RUN dnf -y install python
-RUN /usr/bin/pip install --upgrade pip
-RUN /usr/bin/pip install virtualenv
+RUN /usr/bin/python2 -m pip install pip --upgrade
+RUN /usr/bin/python2 -m pip install virtualenv --upgrade
 
 # python 3
 RUN dnf -y install python3
-RUN /usr/bin/pip3 install --upgrade pip
-RUN /usr/bin/pip3 install virtualenv
+RUN /usr/bin/python3 -m pip install pip --upgrade
+RUN /usr/bin/python3 -m pip install virtualenv --upgrade
 
 # tools
 RUN dnf -y install git curl zip
+
+# java
+RUN dnf -y install java
 
 ENV JENKINS_HOME /var/jenkins_home
 ENV JENKINS_SLAVE_AGENT_PORT 50000
