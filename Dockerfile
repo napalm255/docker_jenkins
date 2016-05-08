@@ -1,5 +1,5 @@
-FROM jenkins:2.0-alpine
+FROM jenkins
 
 USER root
-RUN dnf update
+RUN apt-get upgrade
 USER jenkins
