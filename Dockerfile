@@ -15,7 +15,7 @@ RUN /usr/bin/python3 -m pip install pip --upgrade
 RUN /usr/bin/python3 -m pip install virtualenv --upgrade
 
 # tools
-RUN dnf -y install git curl zip
+RUN dnf -y install git curl zip wget
 
 # java
 RUN dnf -y install java
@@ -80,5 +80,5 @@ USER ${user}
 # from a derived Dockerfile, can use `RUN plugins.sh active.txt` to setup /usr/share/jenkins/ref/plugins from a support bundle
 COPY plugins.sh /usr/local/bin/plugins.sh
 
-#ENTRYPOINT ["/bin/tini", "--", "/usr/local/bin/jenkins.sh"]
+ENTRYPOINT ["/bin/tini", "--", "/usr/local/bin/jenkins.sh"]
 
